@@ -1,0 +1,19 @@
+name: Send notification
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  send-msg:
+    runs-on: ubuntu-latest
+    steps:
+      # 纯文本格式
+      - name: WeChat Work notification by text
+        uses: chf007/action-wechat-work@master
+        env:
+          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+        with:
+          msgtype: text
+          content: 广州今日天气：29度，大部分多云，降雨概率：60%
+          mentioned_list: '["@all"]'
