@@ -11,7 +11,7 @@ jobs:
       - name: run
         id: message
         run: |
-          echo "##[set-output name=msg;]$(date +%s)"
+          echo "##[set-output name=msg;]$(date)"
 
       # 纯文本格式
       - name: WeChat Work notification by text
