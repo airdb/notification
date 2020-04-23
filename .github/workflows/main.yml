@@ -2,7 +2,7 @@ name: Send notification
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '8 * * * *'
 
 jobs:
   send-msg:
